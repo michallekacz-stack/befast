@@ -1,28 +1,10 @@
 import { motion } from 'motion/react';
 import { Star, Quote } from 'lucide-react';
-
-const testimonials = [
-  {
-    name: "Anna Kowalska",
-    role: "Przeprowadzka mieszkania",
-    content: "Pełen profesjonalizm! Panowie uwinęli się z przeprowadzką 3-pokojowego mieszkania w kilka godzin. Meble idealnie zabezpieczone, żadnych uszkodzeń. Polecam w 100%.",
-    rating: 5
-  },
-  {
-    name: "Piotr Nowak",
-    role: "Transport biura",
-    content: "Firma BE FAST przenosiła nasze biuro. Wszystko zgodnie z planem, bez opóźnień. Sprzęt komputerowy dotarł nienaruszony. Bardzo dobry kontakt z właścicielem...",
-    rating: 5
-  },
-  {
-    name: "Marta Wiśniewska",
-    role: "Transport antyków",
-    content: "Bardzo bałam się o transport moich starych mebli, ale ekipa spisała się na medal. Zabezpieczenie folią bąbelkową i kocami na najwyższym poziomie.",
-    rating: 5
-  }
-];
+import { useLanguage } from '@/i18n';
 
 export function Testimonials() {
+  const { t } = useLanguage();
+
   return (
     <section id="opinie" className="py-24 bg-slate-900 text-white relative overflow-hidden">
       {/* Decorative background elements */}
@@ -38,9 +20,8 @@ export function Testimonials() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="text-3xl md:text-5xl font-bold mb-6"
-          >
-            Co mówią o nas <span className="text-orange-500">Klienci</span>
-          </motion.h2>
+            dangerouslySetInnerHTML={{ __html: t.testimonials.title }}
+          />
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -48,12 +29,12 @@ export function Testimonials() {
             transition={{ delay: 0.2 }}
             className="text-lg text-slate-300"
           >
-            Najlepszą wizytówką naszej firmy są zadowoleni klienci. Przeczytaj ich opinie.
+            {t.testimonials.subtitle}
           </motion.p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {testimonials.map((testimonial, index) => (
+          {t.testimonials.items.map((testimonial, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 30 }}

@@ -33,9 +33,9 @@ export const translations = {
       title: 'Client <span class="text-orange-500">Reviews</span>',
       subtitle: 'Don’t just take our word for it. Here’s what our clients have to say about their moving experience with us.',
       items: [
-        { name: 'Sarah Jenkins', role: 'London to Berlin', content: 'Incredible service! The team made my international move completely stress-free. Everything arrived on time and in perfect condition.', rating: 5 },
-        { name: 'Markus Weber', role: 'Office Relocation', content: 'Professional, efficient, and highly communicative. They handled our office equipment with great care. Highly recommended for business moves.', rating: 5 },
-        { name: 'Anna Kowalska', role: 'Warsaw to Paris', content: 'I was worried about moving across Europe, but BE FAST handled everything perfectly. The drivers were polite and very helpful.', rating: 5 }
+        { name: 'Anna Kowalska', role: 'Apartment Relocation', content: 'Full professionalism! The guys handled the 3-room apartment move in just a few hours. Furniture perfectly secured, no damage. I recommend them 100%.', rating: 5 },
+        { name: 'Piotr Nowak', role: 'Office Transport', content: 'BE FAST relocated our office. Everything went according to plan, no delays. Computer equipment arrived intact. Very good contact with the owner...', rating: 5 },
+        { name: 'Marta Wiśniewska', role: 'Antiques Transport', content: 'I was very worried about transporting my old furniture, but the team did a stellar job. Bubble wrap and blanket protection at the highest level.', rating: 5 }
       ]
     },
     faq: {
@@ -106,9 +106,9 @@ export const translations = {
       title: 'Opinie <span class="text-orange-500">Klientów</span>',
       subtitle: 'Nie musisz wierzyć nam na słowo. Zobacz, co nasi klienci mówią o swoich doświadczeniach z nami.',
       items: [
-        { name: 'Sarah Jenkins', role: 'Londyn do Berlina', content: 'Niesamowita obsługa! Zespół sprawił, że moja międzynarodowa przeprowadzka była całkowicie bezstresowa. Wszystko dotarło na czas i w idealnym stanie.', rating: 5 },
-        { name: 'Markus Weber', role: 'Relokacja Biura', content: 'Profesjonalnie, sprawnie i z doskonałą komunikacją. Z wielką dbałością potraktowali nasz sprzęt biurowy. Gorąco polecam do przeprowadzek firmowych.', rating: 5 },
-        { name: 'Anna Kowalska', role: 'Warszawa do Paryża', content: 'Martwiłam się przeprowadzką przez całą Europę, ale BE FAST poradziło sobie ze wszystkim idealnie. Kierowcy byli uprzejmi i bardzo pomocni.', rating: 5 }
+        { name: 'Anna Kowalska', role: 'Przeprowadzka mieszkania', content: 'Pełen profesjonalizm! Panowie uwinęli się z przeprowadzką 3-pokojowego mieszkania w kilka godzin. Meble idealnie zabezpieczone, żadnych uszkodzeń. Polecam w 100%.', rating: 5 },
+        { name: 'Piotr Nowak', role: 'Transport biura', content: 'Firma BE FAST przenosiła nasze biuro. Wszystko zgodnie z planem, bez opóźnień. Sprzęt komputerowy dotarł nienaruszony. Bardzo dobry kontakt z właścicielem...', rating: 5 },
+        { name: 'Marta Wiśniewska', role: 'Transport antyków', content: 'Bardzo bałam się o transport moich starych mebli, ale ekipa spisała się na medal. Zabezpieczenie folią bąbelkową i kocami na najwyższym poziomie.', rating: 5 }
       ]
     },
     faq: {

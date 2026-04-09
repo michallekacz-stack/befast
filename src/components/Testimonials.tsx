@@ -11,7 +11,7 @@ const testimonials = [
   {
     name: "Piotr Nowak",
     role: "Transport biura",
-    content: "Firma BE FAST przenosiła nasze biuro. Wszystko zgodnie z planem, bez opóźnień. Sprzęt komputerowy dotarł nienaruszony. Bardzo dobry kontakt z właścicielem.",
+    content: "Firma BE FAST przenosiła nasze biuro. Wszystko zgodnie z planem, bez opóźnień. Sprzęt komputerowy dotarł nienaruszony. Bardzo dobry kontakt z właścicielem...",
     rating: 5
   },
   {

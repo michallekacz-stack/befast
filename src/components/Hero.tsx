@@ -9,12 +9,12 @@ export function Hero() {
     <section className="relative min-h-screen flex items-center pt-20 overflow-hidden">
       {/* Background Image with Parallax effect via CSS or framer-motion */}
       <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-slate-900/70 z-10" /> {/* Overlay */}
+        <div className="absolute inset-0 bg-blue-950/70 z-10" /> {/* 70% Navy Blue Overlay */}
         <motion.img
           initial={{ scale: 1.1 }}
           animate={{ scale: 1 }}
           transition={{ duration: 10, ease: "easeOut" }}
-          src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070&auto=format&fit=crop"
+          src={`${import.meta.env.BASE_URL}images/hero-bg.jpg`}
           alt="Przeprowadzki"
           className="w-full h-full object-cover"
         />

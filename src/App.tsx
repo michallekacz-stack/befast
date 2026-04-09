@@ -5,7 +5,7 @@
  * Main Application Entry Point
  */
 
-import { LanguageProvider } from './context/LanguageContext';
+import { LanguageProvider } from './context/language-context';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { About } from './components/About';

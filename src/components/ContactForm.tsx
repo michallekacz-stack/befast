@@ -1,6 +1,7 @@
 import { motion } from 'motion/react';
 import { useForm } from 'react-hook-form';
 import { Send, Phone, Mail, MapPin } from 'lucide-react';
+import { useLanguage } from '@/context/language-context';
 
 type FormData = {
   firstName: string;
@@ -14,10 +15,11 @@ type FormData = {
 
 export function ContactForm() {
   const { register, handleSubmit, formState: { errors } } = useForm<FormData>();
+  const { t } = useLanguage();
 
   const onSubmit = (data: FormData) => {
     const phoneNumber = "48735951626";
-    const message = `*Nowe zapytanie o przeprowadzkę*%0A%0A*Imię i nazwisko:* ${data.firstName} ${data.lastName}%0A*Email:* ${data.email}%0A*Telefon:* ${data.phone}%0A*Adres odbioru:* ${data.pickup}%0A*Adres dostawy:* ${data.delivery}%0A*Zakres usług:* ${data.service}`;
+    const message = `*New Relocation Inquiry*%0A%0A*Name:* ${data.firstName} ${data.lastName}%0A*Email:* ${data.email}%0A*Phone:* ${data.phone}%0A*Pickup:* ${data.pickup}%0A*Delivery:* ${data.delivery}%0A*Service:* ${data.service}`;
     
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
     window.open(whatsappUrl, '_blank');
@@ -35,12 +37,12 @@ export function ContactForm() {
             viewport={{ once: true }}
             className="flex flex-col justify-center"
           >
-            <h2 className="text-3xl md:text-5xl font-bold text-slate-900 mb-6">
-              Skontaktuj się z <span className="text-orange-500">nami</span>
-            </h2>
+            <h2 
+              className="text-3xl md:text-5xl font-bold text-slate-900 mb-6"
+              dangerouslySetInnerHTML={{ __html: t.contact.title }}
+            />
             <p className="text-lg text-slate-600 mb-10 leading-relaxed">
-              Wypełnij formularz, a my przygotujemy dla Ciebie darmową wycenę. 
-              Możesz też zadzwonić bezpośrednio lub napisać do nas na WhatsApp.
+              {t.contact.subtitle}
             </p>
 
             <div className="flex flex-col gap-6">
@@ -49,7 +51,7 @@ export function ContactForm() {
                   <Phone size={24} />
                 </div>
                 <div>
-                  <p className="text-sm text-slate-500 font-medium">Zadzwoń do nas</p>
+                  <p className="text-sm text-slate-500 font-medium">{t.contact.callUs}</p>
                   <a href="tel:+48735951626" className="text-xl font-bold text-slate-900 hover:text-orange-500 transition-colors">
                     +48 735 951 626
                   </a>
@@ -61,9 +63,9 @@ export function ContactForm() {
                   <Mail size={24} />
                 </div>
                 <div>
-                  <p className="text-sm text-slate-500 font-medium">Napisz e-mail</p>
-                  <a href="mailto:kontakt@befast.pl" className="text-xl font-bold text-slate-900 hover:text-orange-500 transition-colors">
-                    kontakt@befast.pl
+                  <p className="text-sm text-slate-500 font-medium">{t.contact.emailUs}</p>
+                  <a href="mailto:info@befastcargo.com" className="text-xl font-bold text-slate-900 hover:text-orange-500 transition-colors">
+                    info@befastcargo.com
                   </a>
                 </div>
               </div>
@@ -73,9 +75,9 @@ export function ContactForm() {
                   <MapPin size={24} />
                 </div>
                 <div>
-                  <p className="text-sm text-slate-500 font-medium">Obszar działania</p>
+                  <p className="text-sm text-slate-500 font-medium">{t.contact.areaTitle}</p>
                   <p className="text-xl font-bold text-slate-900">
-                    Cała Polska i Europa
+                    {t.contact.area}
                   </p>
                 </div>
               </div>
@@ -89,88 +91,88 @@ export function ContactForm() {
             viewport={{ once: true }}
             className="bg-slate-50 p-8 md:p-10 rounded-3xl border border-slate-100 shadow-xl shadow-slate-200/50"
           >
-            <h3 className="text-2xl font-bold text-slate-900 mb-8">Darmowa wycena</h3>
+            <h3 className="text-2xl font-bold text-slate-900 mb-8">{t.contact.formTitle}</h3>
             <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-5">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                 <div>
-                  <label className="block text-sm font-medium text-slate-700 mb-2">Imię</label>
+                  <label className="block text-sm font-medium text-slate-700 mb-2">{t.contact.form.firstName}</label>
                   <input 
                     {...register("firstName", { required: true })}
                     className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all"
-                    placeholder="Jan"
+                    placeholder="John"
                   />
-                  {errors.firstName && <span className="text-red-500 text-xs mt-1">To pole jest wymagane</span>}
+                  {errors.firstName && <span className="text-red-500 text-xs mt-1">{t.contact.form.required}</span>}
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-slate-700 mb-2">Nazwisko</label>
+                  <label className="block text-sm font-medium text-slate-700 mb-2">{t.contact.form.lastName}</label>
                   <input 
                     {...register("lastName", { required: true })}
                     className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all"
-                    placeholder="Kowalski"
+                    placeholder="Doe"
                   />
-                  {errors.lastName && <span className="text-red-500 text-xs mt-1">To pole jest wymagane</span>}
+                  {errors.lastName && <span className="text-red-500 text-xs mt-1">{t.contact.form.required}</span>}
                 </div>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                 <div>
-                  <label className="block text-sm font-medium text-slate-700 mb-2">E-mail</label>
+                  <label className="block text-sm font-medium text-slate-700 mb-2">{t.contact.form.email}</label>
                   <input 
                     type="email"
                     {...register("email", { required: true })}
                     className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all"
-                    placeholder="jan@example.com"
+                    placeholder="john@example.com"
                   />
-                  {errors.email && <span className="text-red-500 text-xs mt-1">To pole jest wymagane</span>}
+                  {errors.email && <span className="text-red-500 text-xs mt-1">{t.contact.form.required}</span>}
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-slate-700 mb-2">Telefon</label>
+                  <label className="block text-sm font-medium text-slate-700 mb-2">{t.contact.form.phone}</label>
                   <input 
                     type="tel"
                     {...register("phone", { required: true })}
                     className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all"
-                    placeholder="+48 000 000 000"
+                    placeholder="+44 000 000 000"
                   />
-                  {errors.phone && <span className="text-red-500 text-xs mt-1">To pole jest wymagane</span>}
+                  {errors.phone && <span className="text-red-500 text-xs mt-1">{t.contact.form.required}</span>}
                 </div>
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-slate-700 mb-2">Adres odbioru</label>
+                <label className="block text-sm font-medium text-slate-700 mb-2">{t.contact.form.pickup}</label>
                 <input 
                   {...register("pickup", { required: true })}
                   className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all"
-                  placeholder="np. Warszawa, ul. Nowa 1/2"
+                  placeholder="e.g. London, UK"
                 />
-                {errors.pickup && <span className="text-red-500 text-xs mt-1">To pole jest wymagane</span>}
+                {errors.pickup && <span className="text-red-500 text-xs mt-1">{t.contact.form.required}</span>}
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-slate-700 mb-2">Adres dostawy</label>
+                <label className="block text-sm font-medium text-slate-700 mb-2">{t.contact.form.delivery}</label>
                 <input 
                   {...register("delivery", { required: true })}
                   className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all"
-                  placeholder="np. Kraków, ul. Stara 3/4"
+                  placeholder="e.g. Berlin, Germany"
                 />
-                {errors.delivery && <span className="text-red-500 text-xs mt-1">To pole jest wymagane</span>}
+                {errors.delivery && <span className="text-red-500 text-xs mt-1">{t.contact.form.required}</span>}
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-slate-700 mb-2">Zakres usługi / Dodatkowe informacje</label>
+                <label className="block text-sm font-medium text-slate-700 mb-2">{t.contact.form.service}</label>
                 <textarea 
                   {...register("service", { required: true })}
                   rows={4}
                   className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all resize-none"
-                  placeholder="Opisz co jest do przewiezienia, które piętro, czy potrzebujesz pakowania..."
+                  placeholder="..."
                 />
-                {errors.service && <span className="text-red-500 text-xs mt-1">To pole jest wymagane</span>}
+                {errors.service && <span className="text-red-500 text-xs mt-1">{t.contact.form.required}</span>}
               </div>
 
               <button 
                 type="submit"
                 className="w-full bg-orange-500 hover:bg-orange-600 text-white font-bold py-4 rounded-xl flex items-center justify-center gap-2 transition-all hover:shadow-lg hover:shadow-orange-500/30 active:scale-[0.98] mt-2"
               >
-                Wyślij przez WhatsApp
+                {t.contact.form.submit}
                 <Send size={20} />
               </button>
             </form>

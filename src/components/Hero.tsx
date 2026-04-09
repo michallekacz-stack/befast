@@ -1,7 +1,10 @@
 import { motion } from 'motion/react';
 import { ArrowRight, PhoneCall } from 'lucide-react';
+import { useLanguage } from '@/context/language-context';
 
 export function Hero() {
+  const { t } = useLanguage();
+
   return (
     <section className="relative min-h-screen flex items-center pt-20 overflow-hidden">
       {/* Background Image with Parallax effect via CSS or framer-motion */}
@@ -25,7 +28,7 @@ export function Hero() {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <span className="inline-block py-1 px-3 rounded-full bg-orange-500/20 text-orange-400 font-semibold text-sm mb-6 border border-orange-500/30">
-              Szybko. Bezpiecznie. Na czas.
+              {t.hero.badge}
             </span>
           </motion.div>
           
@@ -34,9 +37,8 @@ export function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-5xl md:text-7xl font-black text-white leading-tight mb-6"
-          >
-            Przeprowadzki bez <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">stresu</span>
-          </motion.h1>
+            dangerouslySetInnerHTML={{ __html: t.hero.title }}
+          />
           
           <motion.p
             initial={{ opacity: 0, y: 30 }}
@@ -44,8 +46,7 @@ export function Hero() {
             transition={{ duration: 0.8, delay: 0.6 }}
             className="text-lg md:text-xl text-slate-300 mb-10 max-w-2xl leading-relaxed"
           >
-            Profesjonalny transport mebli i kompleksowe przeprowadzki. 
-            Zaufaj ekspertom z BE FAST i ciesz się nowym miejscem od pierwszego dnia.
+            {t.hero.subtitle}
           </motion.p>
           
           <motion.div
@@ -58,7 +59,7 @@ export function Hero() {
               href="#kontakt"
               className="group flex items-center justify-center gap-2 bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-xl font-bold text-lg transition-all hover:shadow-xl hover:shadow-orange-500/30 active:scale-95"
             >
-              Darmowa Wycena
+              {t.hero.cta}
               <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />
             </a>
             <a

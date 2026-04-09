@@ -1,6 +1,6 @@
 import { motion } from 'motion/react';
 import { ArrowRight, PhoneCall } from 'lucide-react';
-import { useLanguage } from '@/context/language-context';
+import { useLanguage } from '@/i18n';
 
 export function Hero() {
   const { t } = useLanguage();

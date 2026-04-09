@@ -1,6 +1,6 @@
 import { motion } from 'motion/react';
 import { Package, Truck, Weight, Maximize } from 'lucide-react';
-import { useLanguage } from '@/context/language-context';
+import { useLanguage } from '@/i18n';
 
 export function VanCapacity() {
   const { t } = useLanguage();

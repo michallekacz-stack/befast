@@ -1,4 +1,4 @@
-import { useLanguage } from '@/context/language-context';
+import { useLanguage } from '@/i18n';
 
 export function Footer() {
   const { t } = useLanguage();

@@ -1,7 +1,7 @@
 import { motion } from 'motion/react';
 import { useForm } from 'react-hook-form';
 import { Send, Phone, Mail, MapPin } from 'lucide-react';
-import { useLanguage } from '@/context/language-context';
+import { useLanguage } from '@/i18n';
 
 type FormData = {
   firstName: string;

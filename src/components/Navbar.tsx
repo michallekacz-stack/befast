@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Menu, X } from 'lucide-react';
 import { cn } from '@/lib/utils';
-import { useLanguage } from '@/context/language-context';
+import { useLanguage } from '@/i18n';
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);

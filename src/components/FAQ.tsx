@@ -1,7 +1,7 @@
 import { motion } from 'motion/react';
 import * as Accordion from '@radix-ui/react-accordion';
 import { ChevronDown } from 'lucide-react';
-import { useLanguage } from '@/context/language-context';
+import { useLanguage } from '@/i18n';
 
 export function FAQ() {
   const { t } = useLanguage();

@@ -1,6 +1,6 @@
 import { motion } from 'motion/react';
 import { Globe, Leaf, Map, ShieldCheck } from 'lucide-react';
-import { useLanguage } from '@/context/language-context';
+import { useLanguage } from '@/i18n';
 
 export function WhyUs() {
   const { t } = useLanguage();

@@ -10,7 +10,7 @@ export function Footer() {
           <div className="flex items-center gap-2">
             <div className="relative h-12 sm:h-14 w-48 sm:w-56 flex items-center">
               <img 
-                src="/images/logo.png" 
+                src="/images/logobefast.png" 
                 alt="Be Fast Cargo" 
                 className="h-full w-full object-contain object-left"
                 onError={(e) => {

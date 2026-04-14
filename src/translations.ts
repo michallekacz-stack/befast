@@ -69,7 +69,7 @@ export const translations = {
     },
     footer: {
       rights: 'BE FAST Cargo. All rights reserved.',
-      design: 'Design & Development: Michallekacz'
+      design: 'Design & Development: <a href="https://zuni.studio" target="_blank" rel="noopener noreferrer" class="hover:text-orange-500 transition-colors underline underline-offset-4">zuni.studio</a>'
     }
   },
   pl: {
@@ -142,7 +142,7 @@ export const translations = {
     },
     footer: {
       rights: 'BE FAST Cargo. Wszelkie prawa zastrzeżone.',
-      design: 'Design & Development: Michallekacz'
+      design: 'Design & Development: <a href="https://zuni.studio" target="_blank" rel="noopener noreferrer" class="hover:text-orange-500 transition-colors underline underline-offset-4">zuni.studio</a>'
     }
   }
 };

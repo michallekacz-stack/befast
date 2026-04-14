@@ -35,7 +35,7 @@ export function Footer() {
         
         <div className="mt-8 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
           <p>&copy; {new Date().getFullYear()} {t.footer.rights}</p>
-          <p>{t.footer.design}</p>
+          <p dangerouslySetInnerHTML={{ __html: t.footer.design }} />
         </div>
       </div>
     </footer>

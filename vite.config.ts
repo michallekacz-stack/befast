@@ -6,9 +6,8 @@ import {defineConfig, loadEnv} from 'vite';
 export default defineConfig(({mode}) => {
   const env = loadEnv(mode, '.', '');
   
-  // Automatyczne wykrywanie nazwy repozytorium dla GitHub Pages
-  const githubRepo = process.env.GITHUB_REPOSITORY;
-  const basePath = githubRepo ? `/${githubRepo.split('/')[1]}/` : '/';
+  // Dla własnej domeny (custom domain) na GitHub Pages, base path musi być '/'
+  const basePath = '/';
 
   return {
     base: basePath,

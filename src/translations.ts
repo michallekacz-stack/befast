@@ -53,7 +53,7 @@ export const translations = {
       callUs: 'Call Us',
       emailUs: 'Email Us',
       areaTitle: 'Service Area',
-      area: 'Europe and UK',
+      area: 'Europe, UK, Switzerland, Scandinavia and all Islands',
       formTitle: 'Free Quote',
       form: {
         firstName: 'First Name',
@@ -126,7 +126,7 @@ export const translations = {
       callUs: 'Zadzwoń do nas',
       emailUs: 'Napisz e-mail',
       areaTitle: 'Obszar działania',
-      area: 'Europa i UK',
+      area: 'Europa, UK, Szwajcaria, Skandynawia i wszystkie wyspy',
       formTitle: 'Darmowa Wycena',
       form: {
         firstName: 'Imię',

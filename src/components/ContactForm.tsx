@@ -64,8 +64,8 @@ export function ContactForm() {
                 </div>
                 <div>
                   <p className="text-sm text-slate-500 font-medium">{t.contact.emailUs}</p>
-                  <a href="mailto:info@befastcargo.com" className="text-xl font-bold text-slate-900 hover:text-orange-500 transition-colors">
-                    info@befastcargo.com
+                  <a href="mailto:marcin@befastcargo.com" className="text-xl font-bold text-slate-900 hover:text-orange-500 transition-colors">
+                    marcin@befastcargo.com
                   </a>
                 </div>
               </div>
